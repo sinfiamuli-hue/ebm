@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ekuveri Boli Mulah – Authentic Maldivian Cultural Performances for Weddings, Hithaanee &amp; all occasions."/>
+  <title>Ekuveri Boli Mulah – Maldivian Cultural Performances</title>
+  <link rel="alternate" hreflang="en" href="#"/>
+  <link rel="alternate" hreflang="dv" href="#"/>
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+
+  <!-- Preload Dhivehi fonts -->
+  <link rel="preload" href="assets/fonts/Mv-Mohamed-Ali-Final.woff"  as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="assets/fonts/MvIzyanreethi-Bold-1.woff"  as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="assets/fonts/MV-Izyan-Edge__1_.woff"     as="font" type="font/woff" crossorigin="anonymous">
+
+  <!-- English display font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!--
+    CRITICAL: Run language init BEFORE first paint so there is zero flash of
+    wrong-language content. We inline the bare minimum here; full setLang()
+    lives in i18n.js which is deferred to end of <body>.
+  -->
+  <script>
+    (function () {
+      var lang = 'en';
+      try { lang = localStorage.getItem('ebm-lang') || 'en'; } catch (e) {}
+      var h = document.documentElement;
+      h.setAttribute('lang', lang);
+      h.setAttribute('dir', lang === 'dv' ? 'rtl' : 'ltr');
+      h.setAttribute('data-lang', lang);   /* used by CSS to show/hide spans */
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAV
+  ══════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="assets/logo.png" alt="Ekuveri Boli Mulah Logo" width="44" height="44"/>
+      <span class="nav-logo-text">
+        <span data-lang="en">Ekuveri Boli Mulah</span>
+        <span data-lang="dv">އެކުވެރި ބޮލި މުލައް</span>
+      </span>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="burger-icon">☰</span>
+    </button>
+
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#performances"><span data-lang="en">Performances</span><span data-lang="dv">ހަރަކާތްތައް</span></a></li>
+      <li><a href="#occasions"><span data-lang="en">Occasions</span><span data-lang="dv">ހަފްލާތައް</span></a></li>
+      <li><a href="#why"><span data-lang="en">About</span><span data-lang="dv">އަހަރެމެންނާ ބެހޭ</span></a></li>
+      <li><a href="#booking"><span data-lang="en">Book Now</span><span data-lang="dv">ބުކް ކުރައްވާ</span></a></li>
+    </ul>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="group" aria-label="Language selector">
+      <button class="lang-btn" id="btn-en" aria-label="English" aria-pressed="true">EN</button>
+      <span class="lang-divider" aria-hidden="true"></span>
+      <button class="lang-btn" id="btn-dv" aria-label="ދިވެހި" aria-pressed="false" lang="dv">ދިވެހި</button>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-overlay-texture"></div>
+
+    <div class="hero-content">
+      <!-- Logo -->
+      <div class="hero-logo-wrap">
+        <div class="hero-logo-ring2" aria-hidden="true"></div>
+        <div class="hero-logo-ring"  aria-hidden="true"></div>
+        <img class="hero-logo" src="assets/logo.png" alt="Ekuveri Boli Mulah" width="140" height="140"/>
+      </div>
+
+      <!-- Eyebrow -->
+      <p class="hero-eyebrow">
+        <span data-lang="en">Maldivian Cultural Arts</span>
+        <span data-lang="dv">ދިވެހި ސަގާފީ ފަންނު</span>
+      </p>
+
+      <!-- Title EN -->
+      <h1 class="hero-title-en" data-lang="en" aria-label="Ekuveri Boli Mulah">
+        <span class="title-gold">Ekuveri</span><br/>Boli Mulah
+      </h1>
+      <!-- Title DV -->
+      <h1 class="hero-title-dv" data-lang="dv" aria-label="އެކުވެރި ބޮލި މުލައް" lang="dv">
+        <span class="title-gold">އެކުވެެރި</span><br/>ބޮލި މުލައް
+      </h1>
+
+      <!-- Tagline -->
+      <p class="hero-tagline">
+        <span data-lang="en">Keeping the Heartbeat of Maldivian Tradition Alive</span>
+        <span data-lang="dv">ދިވެހި ސަގާފީ ތަރިކަ ދިރުވާ ބޭއްވުމަށް</span>
+      </p>
+
+      <div class="hero-divider" aria-hidden="true">
+        <div class="hero-divider-line"></div>
+        <div class="hero-divider-diamond"></div>
+        <div class="hero-divider-line"></div>
+      </div>
+
+      <!-- Description -->
+      <p class="hero-desc">
+        <span data-lang="en">From the thundering rhythm of Bodu Beru to the graceful movements of Langiri,
+          we bring authentic Maldivian cultural performances to your weddings,
+          Hithaanee ceremonies, and every occasion worth celebrating.</span>
+        <span data-lang="dv">ބޮޑުބެރުގެ ހިތްގައިމު ރިދަމްތަކުން ފެށިގެން ލަނގިރިގެ ހިތްގައިމު ހަރަކާތްތަކާ ހަމައަށް،
+          ތިޔަ ކައިވެނި ހަފްލާ، ހިތާނީ ހަފްލާ، އަދި ކޮންމެ ހާއްސަ ހަފްލާއަކަށްވެސް
+          ތިޔަ ބޭފުޅުންނަށް ދިވެހި ސަގާފީ ހަރަކާތް ގެނެސްދެމެވެ.</span>
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="hero-cta">
+        <a href="#booking" class="btn btn-primary">
+          <span data-lang="en">✦ Book a Performance</span>
+          <span data-lang="dv">✦ ހަރަކާތް ބުކް ކުރައްވާ</span>
+        </a>
+        <a href="#performances" class="btn btn-outline">
+          <span data-lang="en">Explore Arts</span>
+          <span data-lang="dv">ފަންނުތައް ބައްލަވާ</span>
+        </a>
+      </div>
+    </div><!-- /hero-content -->
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span data-lang="en">Scroll</span>
+      <span data-lang="dv">ތިރިއަށް</span>
+      <span class="hero-scroll-arrow">↓</span>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       PERFORMANCES
+  ══════════════════════════════════════════════ -->
+  <section id="performances">
+    <p class="section-label reveal">
+      <span data-lang="en">Our Performances</span>
+      <span data-lang="dv">އަހަރެމެންގެ ހަރަކާތްތައް</span>
+    </p>
+    <h2 class="section-title reveal">
+      <span data-lang="en">Traditional Arts We Bring</span>
+      <span data-lang="dv">އަހަރެމެން ގެނެސްދޭ ސަގާފީ ފަންނު</span>
+    </h2>
+    <p class="section-sub reveal">
+      <span data-lang="en">Authentic. Rhythmic. Unforgettable.</span>
+      <span data-lang="dv">ހަގީގީ. ރިދަމިކް. ހިތުން ނުފިލާ.</span>
+    </p>
+
+    <div class="perf-grid">
+
+      <!-- Bodu Beru -->
+      <div class="perf-card reveal">
+        <span class="perf-icon" aria-hidden="true">🥁</span>
+        <div class="perf-name">
+          <span data-lang="en">Bodu Beru</span>
+          <span data-lang="dv">ބޮޑުބެރު</span>
+        </div>
+        <p class="perf-desc">
+          <span data-lang="en">The soul of Maldivian music — powerful drumbeats performed by a group of drummers and dancers, building into an electrifying crescendo. A centrepiece for any grand occasion.</span>
+          <span data-lang="dv">ދިވެހި މިއުޒިކްގެ ރޫހު — ބަލިގަދަ ޑްރަމް ތަލިތަކަކާ ނެށުންތެރިންގެ ގްރޫޕަކުން ފަށައި، ތިލިތިލައިން ތެދުވެ ނިމިދާ ހިތްގައިމު ހަރަކާތެކެވެ.</span>
+        </p>
+      </div>
+
+      <!-- Langiri -->
+      <div class="perf-card reveal">
+        <span class="perf-icon" aria-hidden="true">🪘</span>
+        <div class="perf-name">
+          <span data-lang="en">Langiri</span>
+          <span data-lang="dv">ލަނގިރި</span>
+        </div>
+        <p class="perf-desc">
+          <span data-lang="en">A vibrant traditional drumming performance featuring rhythmic patterns unique to the Maldivian islands, performed with precision, energy, and cultural pride.</span>
+          <span data-lang="dv">ދިވެހި ރަށްތަކަށް ހާއްސަ ރިދަމިކް ޕެޓަންތަކެއް ހިމެނޭ، ފަދަވެރި ހަރަކާތާ ސަގާފީ ފަހުރުވެރިކަމާ އެކު ހުށަހަޅާ ހިތްގައިމު ހަރަކާތެކެވެ.</span>
+        </p>
+      </div>
+
+      <!-- Dhafi -->
+      <div class="perf-card reveal">
+        <span class="perf-icon" aria-hidden="true">💃</span>
+        <div class="perf-name">
+          <span data-lang="en">Dhafi</span>
+          <span data-lang="dv">ދަފި</span>
+        </div>
+        <p class="perf-desc">
+          <span data-lang="en">An elegant traditional Maldivian dance blending fluid movement and vocal harmonies — rooted in coastal heritage and performed with grace and storytelling.</span>
+          <span data-lang="dv">ދިވެހި ހިތްގައިމު ސަގާފީ ނެށުމެއް — ލުއި ހިތްގައިމު ހަރަކާތްތަކާ ވޮކަލް ހާރމަނީ ގުޅުވައިލެވިފައި — ގޮނޑުދޮށުގެ ތަރިކައިން ވެދެ ހިކާއިތާ ހިސާބަށް ހުށަހަޅާ ހަރަކާތެކެވެ.</span>
+        </p>
+      </div>
+
+      <!-- Cultural Music & Dance -->
+      <div class="perf-card reveal">
+        <span class="perf-icon" aria-hidden="true">🎶</span>
+        <div class="perf-name">
+          <span data-lang="en">Cultural Music &amp; Dance</span>
+          <span data-lang="dv">ސަގާފީ މިއުޒިކް އަދި ނެށުން</span>
+        </div>
+        <p class="perf-desc">
+          <span data-lang="en">Beyond our signature acts, we offer a wide repertoire of Maldivian folk songs, traditional dances, and cultural showcases tailored to your event's spirit.</span>
+          <span data-lang="dv">މި ތިން ހަރަކާތުގެ އިތުރުން، ތިޔަ ހަފްލާގެ ރޫހަށް ފަހިވާ ގޮތަށް ދިވެހި ފޯކް ލަވަ، ސަގާފީ ނެށުން، އަދި ތަފާތު ސަގާފީ ހުށަހެޅުންތައް ވެސް ހުށަހަޅައި ދެމެވެ.</span>
+        </p>
+      </div>
+
+    </div><!-- /perf-grid -->
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       OCCASIONS
+  ══════════════════════════════════════════════ -->
+  <section id="occasions">
+    <p class="section-label reveal">
+      <span data-lang="en">Perfect For</span>
+      <span data-lang="dv">ހާއްސަ ވަނީ</span>
+    </p>
+    <h2 class="section-title reveal">
+      <span data-lang="en">Every Occasion</span>
+      <span data-lang="dv">ކޮންމެ ހަފްލާއަކަށް</span>
+    </h2>
+    <p class="section-sub reveal">
+      <span data-lang="en">We perform wherever culture deserves celebration</span>
+      <span data-lang="dv">ސަގާފަތަށް ޖާ ދެވޭ ކޮންމެ ތަނަކަށް ހަރަކާތް ގެނެސްދެމެވެ</span>
+    </p>
+    <div class="occ-grid">
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">💍 Wedding Ceremonies</span><span data-lang="dv">💍 ކައިވެނި ހަފްލާ</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🌙 Hithaanee Celebrations</span><span data-lang="dv">🌙 ހިތާނީ ހަފްލާ</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🎉 Private Parties</span><span data-lang="dv">🎉 ޕްރައިވެޓް ޕާޓީ</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🏛️ Cultural Festivals</span><span data-lang="dv">🏛️ ސަގާފީ ފެސްޓިވަލް</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🏢 Corporate Events</span><span data-lang="dv">🏢 ކޯޕަރޭޓް އިވެންޓް</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🎊 National Day Events</span><span data-lang="dv">🎊 ގައުމީ ދުވަހުގެ ހަރަކާތްތައް</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🏨 Resort Performances</span><span data-lang="dv">🏨 ރިސޯޓް ހަރަކާތްތައް</span></span>
+      </div>
+      <div class="occ-item reveal">
+        <div class="occ-dot" aria-hidden="true"></div>
+        <span class="occ-text"><span data-lang="en">🎓 School &amp; Community Events</span><span data-lang="dv">🎓 ސްކޫލް &amp; ދާއިރާ ހަރަކާތްތައް</span></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       WHY US
+  ══════════════════════════════════════════════ -->
+  <section id="why">
+    <p class="section-label reveal">
+      <span data-lang="en">Why Choose Us</span>
+      <span data-lang="dv">ކީއްވެ އަހަރެމެން ހިޔާރު ކުރަންވީ</span>
+    </p>
+    <h2 class="section-title reveal">
+      <span data-lang="en">Rooted in Tradition</span>
+      <span data-lang="dv">ތަރިކައިގެ ތެރޭ ހެދިފައި</span>
+    </h2>
+    <p class="section-sub reveal">
+      <span data-lang="en">A group dedicated to preserving Maldivian heritage</span>
+      <span data-lang="dv">ދިވެހި ތަރިކަ ދިރުވާ ބޭއްވުމަށް ހިތް ތެދުވެ ތިބި ގްރޫޕެއް</span>
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-item reveal">
+        <div class="why-icon" aria-hidden="true">✦</div>
+        <div class="why-label">
+          <span data-lang="en">Authentic Heritage</span>
+          <span data-lang="dv">ހަގީގީ ތަރިކަ</span>
+        </div>
+        <p class="why-desc">
+          <span data-lang="en">Genuine traditional performances passed down through generations of Maldivian cultural practice.</span>
+          <span data-lang="dv">ދިވެހި ސަގާފީ ތަޖުރިބާގެ ކިތަންމެ ޖީލަކުން ތަހައްމަލު ކޮށް ވެދިގެން ދިޔަ ހަގީގީ ސަގާފީ ހަރަކާތްތަކެވެ.</span>
+        </p>
+      </div>
+
+      <div class="why-item reveal">
+        <div class="why-icon" aria-hidden="true">✦</div>
+        <div class="why-label">
+          <span data-lang="en">Experienced Group</span>
+          <span data-lang="dv">ތަޖުރިބާ ހުރި ގްރޫޕެއް</span>
+        </div>
+        <p class="why-desc">
+          <span data-lang="en">Skilled performers who bring energy, discipline, and cultural depth to every show.</span>
+          <span data-lang="dv">ކޮންމެ ހަރަކާތަކަށް ހަކަތަ، ހިތްވަރު، ސަގާފީ ފުން ވިސްނުން ގެނެސްދޭ ކުޅަދާނަ ހަރަކާތްތެރިންގެ ގްރޫޕެކެވެ.</span>
+        </p>
+      </div>
+
+      <div class="why-item reveal">
+        <div class="why-icon" aria-hidden="true">✦</div>
+        <div class="why-label">
+          <span data-lang="en">Tailored to You</span>
+          <span data-lang="dv">ތިޔަ ބޭފުޅުންނަށް ހާއްސަ</span>
+        </div>
+        <p class="why-desc">
+          <span data-lang="en">We customise our programme to match your occasion — intimate or grand, traditional or blended.</span>
+          <span data-lang="dv">ތިޔަ ހަފްލާ ހިތްތިރި ވާ ގޮތަށް ހަރަކާތް ތަރުތީބު ކޮށްދެމެވެ.</span>
+        </p>
+      </div>
+
+      <div class="why-item reveal">
+        <div class="why-icon" aria-hidden="true">✦</div>
+        <div class="why-label">
+          <span data-lang="en">Easy Booking</span>
+          <span data-lang="dv">ފަސޭހަ ބުކިން</span>
+        </div>
+        <p class="why-desc">
+          <span data-lang="en">Reach us by email or WhatsApp — we'll confirm availability and details with you directly.</span>
+          <span data-lang="dv">އީމެއިލް ނުވަތަ ވަޓްސްއެޕް މެދުވެރިކޮށް ގުޅުއްވާ — ތިޔަ ބޭފުޅުންނާ ސީދާ ވަގުތާ ތަފްސީލު ހިއްސާ ކޮށްދޭނެ ވެ.</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       BOOKING / CONTACT
+  ══════════════════════════════════════════════ -->
+  <section id="booking">
+    <div class="booking-wrap">
+      <p class="section-label reveal">
+        <span data-lang="en">Get in Touch</span>
+        <span data-lang="dv">ގުޅުއްވާ</span>
+      </p>
+      <h2 class="section-title reveal">
+        <span data-lang="en">Book a Performance</span>
+        <span data-lang="dv">ހަރަކާތް ބުކް ކުރައްވާ</span>
+      </h2>
+      <p class="section-sub reveal">
+        <span data-lang="en">We'd love to perform at your event</span>
+        <span data-lang="dv">ތިޔަ ހަފްލާގައި ހިތްހަމަ ޖެހިގެން ހަރަކާތް ހުށަހަޅަން ތިބީމެވެ</span>
+      </p>
+
+      <div class="contact-cards">
+
+        <a href="mailto:ekuveribolimulah@gmail.com" class="contact-card reveal">
+          <div class="contact-icon icon-mail" aria-hidden="true">📧</div>
+          <div>
+            <div class="contact-info-label">
+              <span data-lang="en">Email Us</span>
+              <span data-lang="dv">އީމެއިލް ކުރައްވާ</span>
+            </div>
+            <div class="contact-info-val">ekuveribolimulah@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="https://wa.me/9609114145" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+          <div class="contact-icon icon-wa" aria-hidden="true">💬</div>
+          <div>
+            <div class="contact-info-label">WhatsApp</div>
+            <div class="contact-info-val">+960 911 4145</div>
+          </div>
+        </a>
+
+        <a href="https://wa.me/9609732929" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+          <div class="contact-icon icon-wa" aria-hidden="true">💬</div>
+          <div>
+            <div class="contact-info-label">WhatsApp</div>
+            <div class="contact-info-val">+960 973 2929</div>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="booking-note reveal">
+        <span data-lang="en">When reaching out, please share your event type, date, location, and preferred performance — we'll get back to you as soon as possible.</span>
+        <span data-lang="dv">ގުޅުއްވުމުގެ ކުރިން ތިޔަ ހަފްލާގެ ބާވަތ، ތާރީހް، ތަން، ބޭނުންވާ ހަރަކާތް ހިއްސާ ކޮށްދެއްވާ — ވީ އެންމެ އަވަހަށް ވަގުތާ ތަފްސީލު ހިއްސާ ކޮށްދޭނެ ވެ.</span>
+      </p>
+
+      <div class="booking-btn reveal">
+        <a href="mailto:ekuveribolimulah@gmail.com" class="btn btn-primary">
+          <span data-lang="en">✦ Send a Booking Enquiry</span>
+          <span data-lang="dv">✦ ބުކިން ދަރިތި ފޮނުއްވާ</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer>
+    <img src="assets/logo.png" alt="Ekuveri Boli Mulah" class="footer-logo-img" width="72" height="72" loading="lazy"/>
+    <div class="footer-name">
+      <span data-lang="en">Ekuveri Boli Mulah</span>
+      <span data-lang="dv">އެކުވެރި ބޮލި މުލައް</span>
+    </div>
+    <div class="footer-tagline">
+      <span data-lang="en">Preserving Maldivian Cultural Heritage</span>
+      <span data-lang="dv">ދިވެހި ސަގާފީ ތަރިކަ ދިރުވާ ބޭއްވުން</span>
+    </div>
+    <div class="footer-copy">
+      <span data-lang="en">© 2026 Ekuveri Boli Mulah. All rights reserved.</span>
+      <span data-lang="dv">© 2026 އެކުވެެރި ބޮލި މުލައް. ހުރިހާ ހައްގެއް ލިބިގެންވެ.</span>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════
+       SCRIPTS — deferred to end of body
+  ══════════════════════════════════════════════ -->
+  <script src="script.js"></script>
+  <script src="i18n.js"></script>
+
+</body>
+</html>
